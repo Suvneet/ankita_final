@@ -1,19 +1,37 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="AgJunction API check" verbose="1" thread-count="1" parallel="true" >
-
+<suite name="MSG.AI Functionality check" verbose="1" thread-count="10" parallel="none" >
+ 
 <listeners>
-	<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" /> 
+	<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
+	<!-- listener class-name="com.qa.ReRunTransformer.transformer" /> -->
 </listeners>
-
-
-  <test name="User-management">
+  <test name="User-management-chrome">
+  <parameter name="browser" value="FF" />
     <classes>
+  <!--    	<class name="com.qa.tester.NewTest"/>
    
-      <class name="com.qa.tester.LoginPageTest"/>
+      
       <class name="com.qa.tester.HomePageTest"/>
       <class name="com.qa.tester.TrainingPageTest"/>
       <class name="com.qa.tester.SettingPageTest"/>    
-    </classes>
     
+  -->  
+  	<class name="com.qa.tester.LoginPageTest"/>
+  </classes>
   </test>
+
+<!--  <test name="User-management-firefox">
+   <parameter name="browser" value="FF" />
+    <classes>
+   	<class name="com.qa.tester.NewTest"/>
+   
+      
+      <class name="com.qa.tester.HomePageTest"/>
+      <class name="com.qa.tester.TrainingPageTest"/>
+      <class name="com.qa.tester.SettingPageTest"/>    
+    
+  	<class name="com.qa.tester.LoginPageTest"/>
+  </classes>
+  </test>
+    -->
 </suite>

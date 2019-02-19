@@ -1,7 +1,7 @@
 package com.msg.ai.qa.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.qa.base.testbase;
@@ -10,15 +10,19 @@ import com.qa.base.testbase;
 public class LoginPage extends testbase{
 	
 	//Page Factory - OR:
-	@FindBy(xpath="//img[@class='img-responsive' and @src='/images/login-graphic.png']")
+	@CacheLookup
+	@FindBy(xpath="//img[@class='img-responsive' and @src='/images/login-graphics.png']")
 	WebElement aiLogo;
 	
+	@CacheLookup
 	@FindBy(xpath="//input[@placeholder='Enter Email' and @class='el-input__inner']")
 	WebElement email;
 	
+	@CacheLookup
 	@FindBy(xpath="//input[@placeholder='Enter Password' and @class='el-input__inner']")
 	WebElement password;
 	
+	@CacheLookup
 	@FindBy(xpath="//button[@class='el-button btn-submit el-button--default']//span[text()='Log in']")
 	WebElement loginBtn;
 	
@@ -26,7 +30,7 @@ public class LoginPage extends testbase{
 	public LoginPage(){
 		PageFactory.initElements(driver, this);
 	}
-	
+	 
 	//Actions:
 	public String validateLoginPageTitle(){
 		String title = driver.getTitle();

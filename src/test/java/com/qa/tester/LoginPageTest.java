@@ -1,33 +1,36 @@
 package com.qa.tester;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
+import com.qa.ExtentReportListener.CustomListener;
 import com.qa.base.testbase;
 import com.msg.ai.qa.pages.*;
 
+@Listeners(CustomListener.class)
 public class LoginPageTest extends testbase{
 	LoginPage loginPage;
 	HomePage homePage;
 	
+	
 	public LoginPageTest(){
 		super(); //to call constructor of the class
-	}
+	} 
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() throws InterruptedException{
 		initialization();
 		loginPage = new LoginPage();	
 	}
 	
+
 	@Test(priority=1, enabled= false)
 	public void loginPageTitleTest(){
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Log in - AI Studio");
 	}
 	
-	@Test(priority=2, enabled= false)
+	@Test(priority=2, enabled= true)
 	public void crmLogoImageTest(){
 		boolean flag = loginPage.validateAiLogo();
 		Assert.assertTrue(flag);
@@ -39,7 +42,7 @@ public class LoginPageTest extends testbase{
 	}
 	
 	
-	@AfterMethod
+	@AfterClass
 	public void tearDown(){
 		driver.quit();
 	}

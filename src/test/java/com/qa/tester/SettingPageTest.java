@@ -2,9 +2,7 @@ package com.qa.tester;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import com.msg.ai.qa.pages.HomePage;
 import com.msg.ai.qa.pages.LoginPage;
 import com.msg.ai.qa.pages.SettingPage;
@@ -24,7 +22,7 @@ public class SettingPageTest extends testbase{
 		super();
 	}
 
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() throws InterruptedException {
 		initialization();
 		loginPage = new LoginPage();
@@ -32,7 +30,7 @@ public class SettingPageTest extends testbase{
 		homePage.clickDesiredbot();
 	}
 	
-	
+
 	@Test(priority=1, enabled=false)
 	public void SettingPageTitleTest(){
 		String trainingPageTitle = settingpage.validateSettingPageTitle();
@@ -65,7 +63,7 @@ public class SettingPageTest extends testbase{
 		Thread.sleep(3000);
 	}
 	
-	@AfterMethod
+	@AfterClass
 	public void tearDown(){
 		driver.quit();
 	}
