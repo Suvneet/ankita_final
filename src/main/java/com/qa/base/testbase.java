@@ -38,16 +38,12 @@ public class testbase {
 			e.printStackTrace();	
 		} 
 		catch (IOException e) {
-			e.printStackTrace();
-		}
+			e.printStackTrace(); 
+		}  
 	}
 	
-	
-	
-	//@Parameters("browser")
-	//@Test
-	public static void initialization() throws InterruptedException{
-		String browserName = prop.getProperty("browser");
+	public static void initialization(String browserName) {
+		//String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Suvneet.Singh\\Downloads\\chromedriver.exe");	

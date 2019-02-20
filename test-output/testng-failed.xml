@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [MSG.AI Functionality check]">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
-  </listeners>
-  <test thread-count="10" name="User-management-chrome(failed)">
+<suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [MSG.AI Functionality check]" parallel="tests">
+  <test thread-count="10" name="User-management-firefox(failed)" parallel="tests">
     <parameter name="browser" value="FF"/>
+    <classes>
+      <class name="com.qa.tester.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="crmLogoImageTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.tester.LoginPageTest -->
+    </classes>
+  </test> <!-- User-management-firefox(failed) -->
+  <test thread-count="10" name="User-management-chrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.qa.tester.LoginPageTest">
         <methods>

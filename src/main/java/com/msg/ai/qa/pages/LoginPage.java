@@ -24,7 +24,7 @@ public class LoginPage extends testbase{
 	
 	@CacheLookup
 	@FindBy(xpath="//button[@class='el-button btn-submit el-button--default']//span[text()='Log in']")
-	WebElement loginBtn;
+	WebElement loginBtn; 
 	
 	//Initializing the Page Objects:
 	public LoginPage(){

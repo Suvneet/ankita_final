@@ -1,37 +1,46 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="MSG.AI Functionality check" verbose="1" thread-count="10" parallel="none" >
- 
+<suite name="MSG.AI Functionality check" verbose="1" thread-count="10" parallel="tests" >
+ <!--
 <listeners>
 	<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
-	<!-- listener class-name="com.qa.ReRunTransformer.transformer" /> -->
+	 listener class-name="com.qa.ReRunTransformer.transformer" /> 
 </listeners>
-  <test name="User-management-chrome">
-  <parameter name="browser" value="FF" />
-    <classes>
-  <!--    	<class name="com.qa.tester.NewTest"/>
-   
-      
-      <class name="com.qa.tester.HomePageTest"/>
-      <class name="com.qa.tester.TrainingPageTest"/>
-      <class name="com.qa.tester.SettingPageTest"/>    
-    
-  -->  
-  	<class name="com.qa.tester.LoginPageTest"/>
-  </classes>
-  </test>
-
-<!--  <test name="User-management-firefox">
-   <parameter name="browser" value="FF" />
-    <classes>
-   	<class name="com.qa.tester.NewTest"/>
-   
-      
-      <class name="com.qa.tester.HomePageTest"/>
-      <class name="com.qa.tester.TrainingPageTest"/>
-      <class name="com.qa.tester.SettingPageTest"/>    
-    
-  	<class name="com.qa.tester.LoginPageTest"/>
-  </classes>
-  </test>
-    -->
+-->
+<test name="User-management-firefox">
+  		<parameter name="browser" value="FF" />
+  	<!--	<groups>
+  			<run>
+  				<include name="sanity" />
+  				<exclude name="smoke" />
+  			</run>
+  		</groups> -->
+          
+    	<classes>
+  		<!--	<class name="com.qa.parrell.parrellel_grouping" /> -->
+  			<class name="com.qa.tester.LoginPageTest"/>
+  		<!--	<methods>
+  					<include name=""></include>
+  					<exclude name=""></exclude>
+  				</methods> -->
+  		</classes>
+   	</test>
+   	
+   		<test name="User-management-chrome">
+  		<parameter name="browser" value="chrome" />
+  	<!--	<groups>
+  			<run>
+  				<include name="sanity" />
+  				<exclude name="smoke" />
+  			</run>
+  		</groups> -->
+          
+    	<classes>
+  		<!--	<class name="com.qa.parrell.parrellel_grouping" /> -->
+  			<class name="com.qa.tester.LoginPageTest"/>
+  		<!--	<methods>
+  					<include name=""></include>
+  					<exclude name=""></exclude>
+  				</methods> -->
+  		</classes>
+   	</test>
 </suite>

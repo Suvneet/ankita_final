@@ -16,13 +16,14 @@ public class LoginPageTest extends testbase{
 	public LoginPageTest(){
 		super(); //to call constructor of the class
 	} 
-	
+
+	@Parameters("browser")
 	@BeforeClass
-	public void setUp() throws InterruptedException{
-		initialization();
+	public void setUp(String browserName) throws InterruptedException{
+		initialization(browserName);
 		loginPage = new LoginPage();	
 	}
-	
+	 
 
 	@Test(priority=1, enabled= false)
 	public void loginPageTitleTest(){
