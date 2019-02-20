@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="MSG.AI Functionality check" verbose="1" thread-count="10" parallel="tests" >
+<suite name="MSG.AI Functionality check" verbose="1" thread-count="10" parallel="none" >
  <!--
 <listeners>
 	<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
